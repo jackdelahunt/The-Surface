@@ -6,16 +6,16 @@ using System;
 public static class ResourceManager
 {
     private static Dictionary<string, int> inventory = new Dictionary<string, int>(){
-        {"Iron", 0},
-        {"Oxygen", 0},
-        {"Power", 0},
-        {"Water", 0},
-        {"Manpower", 0},
+        {"Iron", 10},
+        {"Oxygen", 10},
+        {"Power", 10},
+        {"Water", 10},
+        {"Manpower", 10},
     };
 
     public static bool addToInventory(string type, int amount) {
 
-        if(inventory.ContainsKey(type)) {
+        if(inventory.ContainsKey(type) && amount >= 0) {
             inventory[type] += amount;
             return true;
         }
@@ -35,12 +35,9 @@ public static class ResourceManager
     }
     public static int canTake(string type, int amount) {
 
-        int value = getAmount(type);
-        if(value > 0) {
-            if(amount - value >= 0)
-                return value;
-            else
-                return -1;
+        int storage = getAmount(type);
+        if(storage - amount >= 0) {
+            return storage;
         }
         return -1;
 
