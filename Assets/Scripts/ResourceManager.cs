@@ -54,4 +54,24 @@ public static class ResourceManager
             return -1;
         }
     }
+
+    public static void runRecipe(int amount, Recpie recpie) {
+        for(int i = 0; i < amount; i++) {
+            
+            // check for all ingredients first
+            for(int index = 0; index < recpie.ingredients.Length; index++) {
+                if(canTake(recpie.ingredients[index], recpie.amounts[index]) == -1) {
+                    return;
+                }
+            }
+
+            // then take what we need
+            for(int index = 0; index < recpie.ingredients.Length; index++) {
+                takeFromInventory(recpie.ingredients[index], recpie.amounts[index]);
+            }
+
+            addToInventory(recpie.name, recpie.yeld);
+
+        }
+    }
 }
