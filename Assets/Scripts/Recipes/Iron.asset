@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   recipeName: Iron
-  ingredients: []
-  amounts: []
-  yeld: 1
+  ingredients:
+  - Power
+  amounts:
+  - 0.1
+  yeld: 0.2

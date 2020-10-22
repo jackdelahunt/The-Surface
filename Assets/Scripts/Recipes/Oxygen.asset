@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Oxygen
   m_EditorClassIdentifier: 
   recipeName: Oxygen
-  ingredients: []
-  amounts: []
+  ingredients:
+  - Power
+  amounts:
+  - 0.1
   yeld: 1
