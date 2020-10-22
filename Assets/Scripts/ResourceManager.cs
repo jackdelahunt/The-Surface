@@ -5,18 +5,18 @@ using System;
 
 public static class ResourceManager
 {
-    private static Dictionary<string, int> inventory = new Dictionary<string, int>(){
+    private static Dictionary<string, float> inventory = new Dictionary<string, float>(){
         {"Iron", 10},
         {"Oxygen", 10},
         {"Power", 10},
         {"Water", 10},
         {"Manpower", 10},
-        {"ShipUpgrade", 1},
-        {"Mine", 1},
+        {"ShipUpgrade", 0},
+        {"Mine", 2},
         {"SolarPanel", 1},
     };
 
-    public static bool addToInventory(string type, int amount) {
+    public static bool addToInventory(string type, float amount) {
 
         if(inventory.ContainsKey(type) && amount >= 0) {
             inventory[type] += amount;
@@ -26,9 +26,9 @@ public static class ResourceManager
             return false;
     }
 
-    public static bool takeFromInventory(string type, int amount) {
+    public static bool takeFromInventory(string type, float amount) {
         
-        int value = canTake(type, amount);
+        float value = canTake(type, amount);
         if(value >= 0) {
             inventory[type] = value - amount;
             return true;
@@ -36,9 +36,9 @@ public static class ResourceManager
 
         return false;
     }
-    public static int canTake(string type, int amount) {
+    public static float canTake(string type, float amount) {
 
-        int storage = getAmount(type);
+        float storage = getAmount(type);
         if(storage - amount >= 0) {
             return storage;
         }
@@ -46,8 +46,8 @@ public static class ResourceManager
 
     }
 
-    public static int getAmount(string type) {
-        int value;
+    public static float getAmount(string type) {
+        float value;
         if(inventory.TryGetValue(type, out value)) {
             return value;
         } else {

@@ -16,8 +16,19 @@ public class BuildingManager : MonoBehaviour
     public void tick() {
         
         // execute whatver each building makes onceper building
-        runRecipe(ResourceManager.getAmount("SolarPanel"), "Power");
-        print(ResourceManager.getAmount("Power") + " : " + ResourceManager.getAmount("Water"));
+        runRecipe((int)ResourceManager.getAmount("SolarPanel"), "Power");
+        runRecipe((int)ResourceManager.getAmount("Mine"), "Iron");
+        runRecipe((int)(1 + ResourceManager.getAmount("ShipUpgrade")), "Oxygen");
+        runRecipe(1, "Manpower");
+
+        string toPrint = 
+        "Iron: " + ResourceManager.getAmount("Iron") + "\n" + 
+        "Oxygen: " + ResourceManager.getAmount("Oxygen") + "\n" + 
+        "Power: " + ResourceManager.getAmount("Power") + "\n" + 
+        "Water: " + ResourceManager.getAmount("Water") + "\n" + 
+        "Manpower: " + ResourceManager.getAmount("Manpower") + "\n";
+
+        print(toPrint);
     }
 
     public void runRecipe(int amount, string name) {

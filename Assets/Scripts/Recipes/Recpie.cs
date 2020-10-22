@@ -7,6 +7,6 @@ public class Recpie : ScriptableObject
 {
     public string recipeName;
     public string[] ingredients;
-    public int[] amounts;
-    public int yeld;
+    public float[] amounts;
+    public float yeld;
 }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f2e6b5548730d4aa988f34227bfd3d, type: 3}
-  m_Name: Power
+  m_Name: Oxygen
   m_EditorClassIdentifier: 
-  recipeName: Power
+  recipeName: Oxygen
   ingredients: []
-  amounts: 
-  yeld: 5
+  amounts: []
+  yeld: 1

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recpies:
   - {fileID: 11400000, guid: 8c92b83f8414f0243b9dc9677b82268a, type: 2}
+  - {fileID: 11400000, guid: 5395636b593e0af4281886ddd9f6ba60, type: 2}
 --- !u!4 &781468217
 Transform:
   m_ObjectHideFlags: 0
