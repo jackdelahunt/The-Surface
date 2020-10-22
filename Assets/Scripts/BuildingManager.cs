@@ -6,10 +6,13 @@ public class BuildingManager : MonoBehaviour
 {
 
     public RecipeManager recipeManager;
+    public GameObject resourceScreenObj;
+    private ResourceScreen resourceScreen;
 
     // Start is called before the first frame update
     void Start()
     {
+        resourceScreen = resourceScreenObj.GetComponent<ResourceScreen>();
         InvokeRepeating("tick", 0f, 1f);
     }
 
@@ -21,14 +24,7 @@ public class BuildingManager : MonoBehaviour
         runRecipe((int)(1 + ResourceManager.getAmount("ShipUpgrade")), "Oxygen");
         runRecipe(1, "Manpower");
 
-        string toPrint = 
-        "Iron: " + ResourceManager.getAmount("Iron") + "\n" + 
-        "Oxygen: " + ResourceManager.getAmount("Oxygen") + "\n" + 
-        "Power: " + ResourceManager.getAmount("Power") + "\n" + 
-        "Water: " + ResourceManager.getAmount("Water") + "\n" + 
-        "Manpower: " + ResourceManager.getAmount("Manpower") + "\n";
-
-        print(toPrint);
+        resourceScreen.tick();
     }
 
     public void runRecipe(int amount, string name) {
