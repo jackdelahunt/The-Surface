@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityStandardAssets.Characters.FirstPerson;
+
 public class Terminal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]private GameObject terminalUI;
+    [SerializeField]private FirstPersonController firstPersonController;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private bool active = false;
+
+    public void toggleTerminal() {
+
+        if(!active) {
+            terminalUI.SetActive(true);
+            firstPersonController.enabled = false;
+            active = true;
+        } else {
+            terminalUI.SetActive(false);
+            firstPersonController.enabled = true;
+            active = false;
+        }
     }
 }
