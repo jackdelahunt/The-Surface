@@ -8,19 +8,24 @@ public class Terminal : MonoBehaviour
 {
     [SerializeField]private GameObject terminalUI;
     [SerializeField]private FirstPersonController firstPersonController;
-
-    private bool active = false;
-
-    public void toggleTerminal() {
-
-        if(!active) {
-            terminalUI.SetActive(true);
-            firstPersonController.enabled = false;
-            active = true;
-        } else {
-            terminalUI.SetActive(false);
+ 
+    void Update()
+    {
+        if( Input.GetButtonDown("Interact")  && terminalUI.activeSelf)
+        {  
             firstPersonController.enabled = true;
-            active = false;
-        }
+            terminalUI.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }    
+    }
+
+    public void startTerminal() {
+        if(!terminalUI.activeSelf) {
+            firstPersonController.enabled = false;
+            terminalUI.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        } 
     }
 }

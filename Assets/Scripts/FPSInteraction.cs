@@ -6,22 +6,13 @@ public class FPSInteraction : MonoBehaviour
 {
 
     [SerializeField]private GameObject interactObject;
-
-     private bool isAxisInUse = false;
+    [SerializeField] private GameObject terminalUI;
  
     void Update()
     {
-        if( Input.GetAxisRaw("Interact") != 0)
+        if( Input.GetButtonDown("Interact") && !terminalUI.activeSelf)
         {
-            if(isAxisInUse == false)
-            {
-                interactObject.SetActive(true);
-                isAxisInUse = true;
-            }
-        }
-        if( Input.GetAxisRaw("Interact") == 0)
-        {
-            isAxisInUse = false;
-        }    
+            interactObject.SetActive(true);
+        }  
     }
 }
