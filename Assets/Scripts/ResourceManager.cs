@@ -6,14 +6,14 @@ using System;
 public static class ResourceManager
 {
     private static Dictionary<string, float> inventory = new Dictionary<string, float>(){
-        {"Iron", 10},
-        {"Oxygen", 10},
-        {"Power", 10},
-        {"Water", 10},
-        {"Manpower", 10},
-        {"ShipUpgrade", 0},
-        {"Mine", 2},
-        {"SolarPanel", 1},
+        {"Iron", 50},
+        {"Oxygen", 50},
+        {"Power", 50},
+        {"Water", 50},
+        {"Manpower", 50},
+        {"Ship Upgrade", 0},
+        {"Mine", 1},
+        {"Solar Panel", 1},
     };
 
     public static bool addToInventory(string type, float amount) {
@@ -55,7 +55,14 @@ public static class ResourceManager
         }
     }
 
-    public static void runRecipe(int amount, Recpie recpie) {
+    public static void runRecipe(int amount, Recpie recpie, bool validate = false) {
+        if(validate){
+            Debug.Log("sss");
+        }
+        if(recpie == null) {
+            Debug.Log("Null Recipe");
+            return;
+        }
         for(int i = 0; i < amount; i++) {
             
             // check for all ingredients first
@@ -70,7 +77,10 @@ public static class ResourceManager
                 takeFromInventory(recpie.ingredients[index], recpie.amounts[index]);
             }
 
-            addToInventory(recpie.name, recpie.yeld);
+            addToInventory(recpie.recipeName, recpie.yeld);
+
+            if(validate)
+                Debug.Log("Successful craft of " + recpie.recipeName);
 
         }
     }

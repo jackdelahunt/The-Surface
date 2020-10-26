@@ -19,10 +19,10 @@ public class BuildingManager : MonoBehaviour
     public void tick() {
         
         // execute whatver each building makes onceper building
-        runRecipe((int)ResourceManager.getAmount("SolarPanel"), "Power");
+        runRecipe((int)ResourceManager.getAmount("Solar Panel"), "Power");
         runRecipe((int)ResourceManager.getAmount("Mine"), "Iron");
-        runRecipe((int)(1 + ResourceManager.getAmount("ShipUpgrade")), "Oxygen");
-        runRecipe(1, "Manpower");
+        runRecipe((int)(1 + ResourceManager.getAmount("Ship Upgrade")), "Oxygen");
+        // runRecipe(1, "Manpower");
 
         resourceScreen.tick();
     }
@@ -32,9 +32,6 @@ public class BuildingManager : MonoBehaviour
             return;
 
         Recpie recpie = recipeManager.getRecpie(name);
-
-        if(recpie == null)
-            return;
 
         ResourceManager.runRecipe(amount, recpie);
     }

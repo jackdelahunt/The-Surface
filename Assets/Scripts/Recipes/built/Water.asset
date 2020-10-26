@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f2e6b5548730d4aa988f34227bfd3d, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: Water
   ingredients:
   - Oxygen
   - Power
   amounts:
-  - 1
+  - 3
   - 0.2
-  yeld: 0
+  yeld: 1

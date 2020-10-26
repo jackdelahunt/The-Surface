@@ -17,5 +17,8 @@ public class ResourceScreen : MonoBehaviour
         amounts[2].text =  Math.Round(ResourceManager.getAmount("Power"), 2).ToString();
         amounts[3].text =  Math.Round(ResourceManager.getAmount("Water"), 2).ToString();
         amounts[4].text =  Math.Round(ResourceManager.getAmount("Manpower"), 2).ToString();
+        amounts[5].text =  Math.Round(ResourceManager.getAmount("Mine"), 2).ToString();
+        amounts[6].text =  Math.Round(ResourceManager.getAmount("Ship Upgrade"), 2).ToString();
+        amounts[7].text =  Math.Round(ResourceManager.getAmount("Solar Panel"), 2).ToString();
     }
 }

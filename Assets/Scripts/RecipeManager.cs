@@ -8,7 +8,7 @@ public class RecipeManager : MonoBehaviour
 
     public Recpie getRecpie(string name) {
         foreach(Recpie recpie in recpies) {
-            if(recpie.name.Equals(name))
+            if(recpie.recipeName.Equals(name))
                 return recpie;
         }
 

@@ -17,6 +17,6 @@ MonoBehaviour:
   - Water
   - Oxygen
   amounts:
-  - 100
-  - 100
+  - 5
+  - 5
   yeld: 1
