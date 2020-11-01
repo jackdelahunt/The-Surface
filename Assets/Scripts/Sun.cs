@@ -10,7 +10,6 @@ public class Sun : MonoBehaviour
     
     void Update() {
         transform.Rotate (timeMultiplier * Time.deltaTime, 0, 0);
-        print(getTimeOfDay());
     }
 
     public float getTimeOfDay() {

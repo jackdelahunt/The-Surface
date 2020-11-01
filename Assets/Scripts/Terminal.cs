@@ -8,6 +8,10 @@ public class Terminal : MonoBehaviour
 {
     [SerializeField]private GameObject terminalUI;
     [SerializeField]private FirstPersonController firstPersonController;
+
+    void Start() {
+        firstPersonController.enabled = true;
+    }
  
     void Update()
     {
