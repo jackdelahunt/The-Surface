@@ -7,23 +7,30 @@ public class Spawner : MonoBehaviour
     public GameObject toSpawn;
     public List<Transform> spawnPoints;
     public int spawnCount;
+    public Sun sun;
 
     void Start() {
         spawnPoints = new List<Transform>(transform.GetComponentsInChildren<Transform>());
         spawnPoints.Remove(transform); //removing this game objects transform
 
-        spawn();
+        sun = GameObject.FindGameObjectWithTag("Sun").GetComponent<Sun>();
     }
 
-    void spawn() {
-        int left = spawnCount;
+    void Update() {
+        if(sun.isNewDay())
+            spawn(spawnCount);
+    }
+
+    void spawn(int spawnAmount) {
         foreach(Transform t in spawnPoints) {
             GameObject.Instantiate(toSpawn, t.position, new Quaternion(0f, 0f, 0f, 0f));
-            left--;
+            spawnAmount--;
 
-            if(left <= 0) {
+            if(spawnAmount <= 0) {
                 return;
             }
         }
+
+        spawn(spawnAmount);
     }
 }
