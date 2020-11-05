@@ -52,7 +52,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField]private AudioSource gunAudio;
         [SerializeField]private float shotResetTime = 0.5f;
         private float nextFire;
-        
+        [SerializeField]private ParticleSystem shootParicle;
+        [SerializeField]private Animator gunAnimator;
         
 
         // Use this for initialization
@@ -102,6 +103,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 nextFire = Time.time + shotResetTime;
 
                 gunAudio.Play();
+                shootParicle.Play();
+                gunAnimator.SetTrigger("Fire");
 
                 Vector3 rayOrigin = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;

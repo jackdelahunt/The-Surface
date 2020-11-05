@@ -399,8 +399,8 @@ MonoBehaviour:
   fireRate: 0.25
   weaponRage: 25
   gunAudio: {fileID: 0}
-  laserLine: {fileID: 0}
-  nextFire: 0
+  shotResetTime: 0.5
+  shootParicle: {fileID: 0}
 --- !u!120 &294493836
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -657,17 +657,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.18800001
       objectReference: {fileID: 0}
-    - target: {fileID: 4398818239886518, guid: 33f6247810b654041bccca4adbd93f45, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
+    - target: {fileID: 6804056692873004598, guid: 33f6247810b654041bccca4adbd93f45,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4398818239886518, guid: 33f6247810b654041bccca4adbd93f45, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
+    - target: {fileID: 6804056692873004598, guid: 33f6247810b654041bccca4adbd93f45,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4398818239886518, guid: 33f6247810b654041bccca4adbd93f45, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
+    - target: {fileID: 6804056692873004598, guid: 33f6247810b654041bccca4adbd93f45,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f6247810b654041bccca4adbd93f45, type: 3}
