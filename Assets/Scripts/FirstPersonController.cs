@@ -50,8 +50,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField]float weaponRage = 25f;
         [SerializeField]private WaitForSeconds shotDuration = new WaitForSeconds(0.05f);
         [SerializeField]private AudioSource gunAudio;
-        [SerializeField]private LineRenderer laserLine;
-        [SerializeField]private float nextFire;
+        [SerializeField]private float shotResetTime = 0.5f;
+        private float nextFire;
         
         
 
@@ -68,10 +68,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-
-            // gun stuff
-            laserLine = GetComponent<LineRenderer>();
-
         }
 
 
@@ -103,30 +99,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void handleGun() {
             if(Input.GetButtonDown("Fire1") && Time.time > nextFire) {
-                nextFire = Time.time + 1f;
+                nextFire = Time.time + shotResetTime;
 
-                StartCoroutine(shotEffect());
+                gunAudio.Play();
 
                 Vector3 rayOrigin = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;
 
-                laserLine.SetPosition(0, gunEnd.position);
-
                 if(Physics.Raycast(rayOrigin, m_Camera.transform.forward, out hit, weaponRage)) {
-                    laserLine.SetPosition(1, hit.point);
+                    print("X: " + hit.point.x + "\n" + "Y: " + hit.point.y);
                 } else {
-                   laserLine.SetPosition(1, rayOrigin + (m_Camera.transform.forward * weaponRage)); 
+                   print("NOHIT");
                 }
             }
         }
 
-        private IEnumerator shotEffect() {
-            m_AudioSource.Play();
-            laserLine.enabled = true;
-
-            yield return shotDuration;
-            laserLine.enabled = false;
-        }
 
 
         private void PlayLandingSound()
