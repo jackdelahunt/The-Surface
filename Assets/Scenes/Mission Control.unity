@@ -2458,12 +2458,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2216270888a4ced48b33b7b5641611e6, type: 3}
---- !u!20 &1132343373 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8940598935455782697, guid: be24a914c1ff60a468af764df5d2b4b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8940598935714614156}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1159814463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5874,139 +5868,77 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FootstepSounds.Array.size
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.IncreaseCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_WalkSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_RunstepLenghten
-      value: 0.115
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_RunSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_JumpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FootstepSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FootstepSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FootstepSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FootstepSounds.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_JumpSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_GravityMultiplier
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_UseHeadBob
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_IsWalking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_StickToGroundForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.originalFov
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.Camera
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1132343373}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_LandSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_StepInterval
-      value: 6
+      objectReference: {fileID: 2100000, guid: 1df386d4d9325874a8c8d562b07ab7c7, type: 2}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.31764984
       objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.FOVIncrease
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_UseFovKick
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.IncreaseCurve.m_Curve.Array.data[1].time
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0.08235258
+      objectReference: {fileID: 0}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime0
+      value: 49537
+      objectReference: {fileID: 0}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.IncreaseCurve.m_Curve.Array.data[1].value
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_FovKick.IncreaseCurve.m_Curve.Array.data[1].inSlope
-      value: 2
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.generateLightingData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inSlope
+      value: -0.4612758
+      objectReference: {fileID: 0}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outSlope
+      value: -0.4612758
+      objectReference: {fileID: 0}
+    - target: {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
+      value: 0.1530343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668232575, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668232575, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668232575, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
-      propertyPath: m_FovKick.IncreaseCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8940598934648955542, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_IsActive
+      propertyPath: nextFire
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940598935455222057, guid: be24a914c1ff60a468af764df5d2b4b0,
@@ -6064,30 +5996,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8940598935455222057, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8940598935455323401, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
       propertyPath: m_Name
       value: FPSController
-      objectReference: {fileID: 0}
-    - target: {fileID: 8940598935455323401, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8940598935455355812, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
       propertyPath: terminalUI
       value: 
       objectReference: {fileID: 755844923}
-    - target: {fileID: 8940598935455782697, guid: be24a914c1ff60a468af764df5d2b4b0,
-        type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}

@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_StepInterval;
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
-        [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on gr
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -43,6 +43,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField]private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public int gunDamage = 1;
+        public float hitForce = 100f;
+        public Transform gunEnd;
+        [SerializeField]float fireRate = 0.25f;
+        [SerializeField]float weaponRage = 25f;
+        [SerializeField]private WaitForSeconds shotDuration = new WaitForSeconds(0.05f);
+        [SerializeField]private AudioSource gunAudio;
+        [SerializeField]private LineRenderer laserLine;
+        [SerializeField]private float nextFire;
+        
+        
+
         // Use this for initialization
         private void Start()
         {
@@ -56,12 +68,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            // gun stuff
+            laserLine = GetComponent<LineRenderer>();
+
         }
 
 
         // Update is called once per frame
         private void Update()
         {
+            handleGun();
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -82,6 +99,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+        }
+
+        private void handleGun() {
+            if(Input.GetButtonDown("Fire1") && Time.time > nextFire) {
+                nextFire = Time.time + 1f;
+
+                StartCoroutine(shotEffect());
+
+                Vector3 rayOrigin = m_Camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
+                RaycastHit hit;
+
+                laserLine.SetPosition(0, gunEnd.position);
+
+                if(Physics.Raycast(rayOrigin, m_Camera.transform.forward, out hit, weaponRage)) {
+                    laserLine.SetPosition(1, hit.point);
+                } else {
+                   laserLine.SetPosition(1, rayOrigin + (m_Camera.transform.forward * weaponRage)); 
+                }
+            }
+        }
+
+        private IEnumerator shotEffect() {
+            m_AudioSource.Play();
+            laserLine.enabled = true;
+
+            yield return shotDuration;
+            laserLine.enabled = false;
         }
 
 

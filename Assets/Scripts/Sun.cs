@@ -18,7 +18,7 @@ public class Sun : MonoBehaviour
     }
 
     public float getTimeOfDay() {
-        float rotation = UnityEditor.TransformUtils.GetInspectorRotation(transform).x;
+        float rotation = transform.localEulerAngles.x;
 
         // returns number between 0 -> 1 for the time of day
         return (rotation % 360) / 360.0f;

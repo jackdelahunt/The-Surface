@@ -17,6 +17,6 @@ MonoBehaviour:
   - Iron
   - Manpower
   amounts:
-  - 5
+  - 20
   - 10
   yeld: 1
