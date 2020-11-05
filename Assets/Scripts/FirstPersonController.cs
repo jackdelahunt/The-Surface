@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 #pragma warning disable 618, 649
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -110,7 +111,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 RaycastHit hit;
 
                 if(Physics.Raycast(rayOrigin, m_Camera.transform.forward, out hit, weaponRage)) {
-                    print("X: " + hit.point.x + "\n" + "Y: " + hit.point.y);
+                    if(hit.collider.tag.Equals("Bot")) {
+                        GameObject bot = hit.collider.gameObject;
+                        bot.GetComponent<AICharacterControl>().kill();
+                    }
                 } else {
                    print("NOHIT");
                 }

@@ -1756,7 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eaa8d6a303c0da409f1418b75c0c4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSpawn: {fileID: 6570297086726611527, guid: 6d8942a5c57534f41b75b908b9511c12, type: 3}
+  toSpawn: {fileID: 4324788273015491758, guid: 669b33fb92b4c5244a174746526030f7, type: 3}
   spawnPoints: []
   spawnCount: 3
   sun: {fileID: 0}
@@ -5819,12 +5819,12 @@ PrefabInstance:
     - target: {fileID: 8940598935455222057, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: -18.04
       objectReference: {fileID: 0}
     - target: {fileID: 8940598935455222057, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8940598935455222057, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
@@ -5881,6 +5881,11 @@ PrefabInstance:
       propertyPath: terminalUI
       value: 
       objectReference: {fileID: 755844923}
+    - target: {fileID: 8940598935460722281, guid: be24a914c1ff60a468af764df5d2b4b0,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}

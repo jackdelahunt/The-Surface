@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terminal
   - Sun
+  - Bot
   layers:
   - Default
   - TransparentFX

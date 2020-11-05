@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -21,6 +22,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	        agent.updateRotation = false;
 	        agent.updatePosition = true;
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            toggleRagdoll();
         }
 
 
@@ -39,6 +41,35 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public void SetTarget(Transform target)
         {
             this.target = target;
+        }
+
+        public void kill() {
+            toggleRagdoll();
+            GetComponent<Animator>().enabled = false;
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.isKinematic = true;
+            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<ThirdPersonCharacter>().enabled = false;
+            GetComponent<AICharacterControl>().enabled = false;
+        }
+
+        public void toggleRagdoll() {
+            Collider[] cols = GetComponentsInChildren<Collider>();
+            Rigidbody[] rigs = GetComponentsInChildren<Rigidbody>();
+
+            foreach(Collider col in cols) {
+                col.enabled = !col.enabled;
+            }
+
+            foreach(Rigidbody rig in rigs) {
+                rig.useGravity = !rig.useGravity;
+            }
+
+            GetComponent<Collider>().enabled = true;
+            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
