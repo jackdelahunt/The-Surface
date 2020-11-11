@@ -14,4 +14,14 @@ public class Session : MonoBehaviour
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index - 1);
     }
+
+    public void pauseGame(bool state) {
+        Time.timeScale = state ? 0 : 1;
+        Cursor.visible = state;
+        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    public bool getPauseState() {
+        return Time.timeScale == 0 ? true : false;
+    }
 }

@@ -15,7 +15,7 @@ public class Terminal : MonoBehaviour
  
     void Update()
     {
-        if( Input.GetButtonDown("Interact")  && terminalUI.activeSelf)
+        if( (Input.GetButtonDown("Interact") || Input.GetButtonDown("Pause") ) && terminalUI.activeSelf)
         {  
             firstPersonController.enabled = true;
             terminalUI.SetActive(false);
