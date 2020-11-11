@@ -7,29 +7,26 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Terminal : MonoBehaviour
 {
     [SerializeField]private GameObject terminalUI;
-    [SerializeField]private FirstPersonController firstPersonController;
+    private Session session;
 
     void Start() {
-        firstPersonController.enabled = true;
+        session = GameObject.FindGameObjectWithTag("Session").GetComponent<Session>();
+
     }
  
     void Update()
     {
         if( (Input.GetButtonDown("Interact") || Input.GetButtonDown("Pause") ) && terminalUI.activeSelf)
         {  
-            firstPersonController.enabled = true;
             terminalUI.SetActive(false);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            session.lockCursor();
         }    
     }
 
     public void startTerminal() {
         if(!terminalUI.activeSelf) {
-            firstPersonController.enabled = false;
             terminalUI.SetActive(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            session.unlockCursor();
         } 
     }
 }

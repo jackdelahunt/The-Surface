@@ -17,31 +17,27 @@ public class FPSInteraction : MonoBehaviour
     void Start() {
         session = GameObject.FindGameObjectWithTag("Session").GetComponent<Session>();
         controller = GetComponent<FirstPersonController>();
+        //controller.enabled = true;
     }
  
     void Update()
     {
-        handleIfPaused();
-        checkForPause();
+        pause();
         checkForInteraction();
+
+        
+        if(pauseMenuUI.activeSelf || terminalUI.activeSelf) {
+            controller.enabled = false;
+        } else {
+            controller.enabled = true;
+        }
+        
     }
 
-    void handleIfPaused() {
-        bool pauseState = session.getPauseState();
-
-        // dont ever do this again... 1/10 effort
-        if(pauseState || wasPaused)
-            controller.enabled = !pauseState;
-
-        pauseMenuUI.SetActive(pauseState);
-
-        wasPaused = pauseState;
-    }
-
-    void checkForPause() {
-        if(Input.GetButtonDown("Pause") && !terminalUI.activeSelf) {
-            bool state = session.getPauseState();
-            session.pauseGame(!state);
+    void pause() {
+        if(Input.GetButtonDown("Pause") && !session.getPauseState() && !terminalUI.activeSelf) {
+            session.pauseGame(true);
+            controller.enabled = false;
         }
     }
 
