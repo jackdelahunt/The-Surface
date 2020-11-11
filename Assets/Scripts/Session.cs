@@ -3,15 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class Session : MonoBehaviour
 {
-    public void loadNext() {
-
+    public void loadNext(bool pause) {
         int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(index + 1);
+        pauseGame(pause);
+        SceneManager.LoadSceneAsync(index + 1, LoadSceneMode.Single);
     }
 
-    public void loadLast() {
+    public void loadLast(bool pause) {
         int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(index - 1);
+        pauseGame(pause);
+        SceneManager.LoadSceneAsync(index - 1, LoadSceneMode.Single);
     }
 
     public void pauseGame(bool state) {
