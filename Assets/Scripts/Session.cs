@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Session : MonoBehaviour
 {
@@ -22,6 +23,17 @@ public class Session : MonoBehaviour
         } else {
             lockCursor();
         }
+    }
+
+    public void closeGame() {
+        StartCoroutine (playExitSound(GetComponent<AudioSource>()));
+    }
+
+    public IEnumerator playExitSound(AudioSource source){
+        source.Play ();
+        yield return new WaitWhile (()=> source.isPlaying);
+        Application.Quit();
+
     }
 
     public bool getPauseState() {
