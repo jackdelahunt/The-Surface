@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public List<Transform> spawnPoints;
     public int spawnCount;
     public Sun sun;
+    public Transform botParent;
 
     void Start() {
         spawnPoints = new List<Transform>(transform.GetComponentsInChildren<Transform>());
@@ -23,7 +24,7 @@ public class Spawner : MonoBehaviour
 
     void spawn(int spawnAmount) {
         foreach(Transform t in spawnPoints) {
-            GameObject.Instantiate(toSpawn, t.position, new Quaternion(0f, 0f, 0f, 0f));
+            GameObject.Instantiate(toSpawn, t.position, new Quaternion(0f, 0f, 0f, 0f), botParent);
             spawnAmount--;
 
             if(spawnAmount <= 0) {

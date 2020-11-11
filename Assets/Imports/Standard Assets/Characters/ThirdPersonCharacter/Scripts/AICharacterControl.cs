@@ -54,6 +54,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<ThirdPersonCharacter>().enabled = false;
             GetComponent<AICharacterControl>().enabled = false;
+
+            Invoke("DeleteSelf", 3f);
         }
 
         public void toggleRagdoll() {
@@ -71,5 +73,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             GetComponent<Collider>().enabled = true;
             GetComponent<Rigidbody>().useGravity = true;
         }
+
+        public void DeleteSelf() {
+            Destroy(gameObject);
+        }
+
+        
     }
 }
