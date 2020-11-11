@@ -5618,10 +5618,40 @@ PrefabInstance:
       propertyPath: recipeManager
       value: 
       objectReference: {fileID: 781468216}
+    - target: {fileID: 6274492954627702154, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702093406545065849, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 95.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702093406545065849, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100574015610868909, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 4.307327
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100574015610868909, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.6381369
+      objectReference: {fileID: 0}
     - target: {fileID: 8615019303910679096, guid: a3121d5f19ac1894da92414271b70483,
         type: 3}
       propertyPath: m_Name
       value: Screen Space UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615019303910679098, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8615019303910679100, guid: a3121d5f19ac1894da92414271b70483,
         type: 3}
