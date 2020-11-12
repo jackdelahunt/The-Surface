@@ -57,7 +57,7 @@ public static class ResourceManager
 
     public static void runRecipe(int amount, Recpie recpie, bool validate = false) {
         if(validate){
-            Debug.Log("sss");
+            Debug.Log(recpie.recipeName + " : validated");
         }
         if(recpie == null) {
             Debug.Log("Null Recipe");

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f2e6b5548730d4aa988f34227bfd3d, type: 3}
   m_Name: ShipUpgrade
   m_EditorClassIdentifier: 
-  recipeName: ShipUpgrade
+  recipeName: Ship Upgrade
   ingredients:
   - Iron
   - Manpower

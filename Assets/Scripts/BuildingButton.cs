@@ -6,9 +6,11 @@ using TMPro;
 public class BuildingButton : MonoBehaviour
 {
     [SerializeField]private RecipeManager recipeManager;
-    [SerializeField]private TMP_Text text;
+    [SerializeField]private TMP_Text buttonText;
 
     public void click() {
-        ResourceManager.runRecipe(1, recipeManager.getRecpie(text.text), validate:true);
+        string text = buttonText.text;
+        Recpie recpie = recipeManager.getRecpie(text);
+        ResourceManager.runRecipe(1, recipeManager.getRecpie(buttonText.text), validate:true);
     }
 }
