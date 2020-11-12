@@ -17,4 +17,4 @@ MonoBehaviour:
   - Power
   amounts:
   - 0.1
-  yeld: 1
+  yeld: 0.5

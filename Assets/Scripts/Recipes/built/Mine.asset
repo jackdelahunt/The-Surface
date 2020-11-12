@@ -18,5 +18,5 @@ MonoBehaviour:
   - Manpower
   amounts:
   - 20
-  - 10
+  - 5
   yeld: 1
