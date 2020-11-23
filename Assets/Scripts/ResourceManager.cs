@@ -6,13 +6,13 @@ using System;
 public static class ResourceManager
 {
     private static Dictionary<string, float> inventory = new Dictionary<string, float>(){
-        {"Iron", 5},
+        {"Iron", 50},
         {"Oxygen", 5},
-        {"Power", 20},
+        {"Power", 0},
         {"Water", 5},
-        {"Manpower", 5},
+        {"Manpower", 10},
         {"Ship Upgrade", 0},
-        {"Mine", 1},
+        {"Mine", 0},
         {"Solar Panel", 1},
     };
 

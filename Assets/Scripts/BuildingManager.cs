@@ -21,7 +21,7 @@ public class BuildingManager : MonoBehaviour
         // execute whatver each building makes onceper building
         runRecipe((int)ResourceManager.getAmount("Solar Panel"), "Power");
         runRecipe((int)ResourceManager.getAmount("Mine"), "Iron");
-        runRecipe((int)(1 + ResourceManager.getAmount("Ship Upgrade")), "Oxygen");
+        runRecipe((int)(ResourceManager.getAmount("Ship Upgrade")), "Oxygen");
         // runRecipe(1, "Manpower");
 
         resourceScreen.tick();
