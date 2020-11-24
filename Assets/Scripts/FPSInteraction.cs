@@ -37,6 +37,7 @@ public class FPSInteraction : MonoBehaviour
     void pause() {
         if(Input.GetButtonDown("Pause") && !session.getPauseState() && !terminalUI.activeSelf) {
             session.pauseGame(true);
+            session.unlockCursor();
             controller.enabled = false;
         }
     }

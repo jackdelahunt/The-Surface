@@ -4,25 +4,18 @@ using System.Collections;
 
 public class Session : MonoBehaviour
 {
-    public void loadNext(bool pause) {
+	public void loadNext() {
         int index = SceneManager.GetActiveScene().buildIndex;
-        pauseGame(pause);
         SceneManager.LoadSceneAsync(index + 1, LoadSceneMode.Single);
     }
 
-    public void loadLast(bool pause) {
+    public void loadLast() {
         int index = SceneManager.GetActiveScene().buildIndex;
-        pauseGame(pause);
         SceneManager.LoadSceneAsync(index - 1, LoadSceneMode.Single);
     }
 
     public void pauseGame(bool state) {
-        Time.timeScale = state ? 0 : 1;
-        if(state) {
-            unlockCursor();
-        } else {
-            lockCursor();
-        }
+        Time.timeScale = state ? 0 : 1; 
     }
 
     public void closeGame() {
