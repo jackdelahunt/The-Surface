@@ -18,5 +18,10 @@ public class OptionsScreen : MonoBehaviour
 
     public void slideOut() {
         animator.SetTrigger("SlideOut");
-    }
+        saveOptions();
+	}
+
+	public void saveOptions() {
+
+	}
 }
