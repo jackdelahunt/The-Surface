@@ -162,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109393344}
   - component: {fileID: 109393343}
+  - component: {fileID: 109393345}
   m_Layer: 8
   m_Name: PostEffects
   m_TagString: Untagged
@@ -200,6 +201,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109393345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109393342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17ef99c079263f4a8ad2e9ece55120e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 0}
+  motionBlurSetting: {fileID: 0}
+  shutterAngle: 300
 --- !u!4 &120107882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445452, guid: 14f2f01264616214ba79f88c8f46c15f,
@@ -440,7 +456,8 @@ AudioSource:
   m_GameObject: {fileID: 241500867}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4891675694791841867, guid: 0e5ed586d5455964db13ddefe1e077fa,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 38b450e2adcb6f542acc8c1d423bd8dc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -986,7 +1003,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1774
+  m_Name: pb_Mesh27070
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2096,7 +2113,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1782
+  m_Name: pb_Mesh27562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3166,7 +3183,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1766
+  m_Name: pb_Mesh27192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3427,7 +3444,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1756
+  m_Name: pb_Mesh27494
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3924,6 +3941,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8940598935714614156}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1672351139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672351135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a26b728d06b7124682a1a450e9e38fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  processLayer: {fileID: 0}
 --- !u!114 &1672351140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6474,6 +6504,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6212672932266698553, guid: be24a914c1ff60a468af764df5d2b4b0,
+        type: 3}
+      propertyPath: masterMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 0e5ed586d5455964db13ddefe1e077fa,
+        type: 2}
     - target: {fileID: 7783695191287145272, guid: be24a914c1ff60a468af764df5d2b4b0,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -6624,6 +6660,12 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8940598935461842153, guid: be24a914c1ff60a468af764df5d2b4b0,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4891675694791841867, guid: 0e5ed586d5455964db13ddefe1e077fa,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 294493836, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}
     - {fileID: 8940598935462267657, guid: be24a914c1ff60a468af764df5d2b4b0, type: 3}

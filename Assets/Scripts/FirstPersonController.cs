@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.Audio;
 
 #pragma warning disable 618, 649
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -44,6 +45,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField]private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public AudioMixer masterMixer;
+
         public int gunDamage = 1;
         public float hitForce = 100f;
         public Transform gunEnd;
@@ -70,8 +73,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            setSoundSettings();
+        }
 
-            AudioListener.volume = Settings.getSoundSetting();
+        private void setSoundSettings() {
+            //should not be done in the player
+            masterMixer.SetFloat("Master", Mathf.Log10(Settings.getSoundSetting()) * 20);
+            masterMixer.SetFloat("Music", Mathf.Log10(Settings.getMusicSetting()) * 20);
         }
 
 
