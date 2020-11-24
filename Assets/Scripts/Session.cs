@@ -6,12 +6,13 @@ public class Session : MonoBehaviour
 {
 	public void loadNext() {
         int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(index + 1, LoadSceneMode.Single);
+        SceneManager.LoadScene(index + 1, LoadSceneMode.Single);
     }
 
     public void loadLast() {
         int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(index - 1, LoadSceneMode.Single);
+        print("Loading last: " + index);
+        SceneManager.LoadScene(index - 1, LoadSceneMode.Single);
     }
 
     public void pauseGame(bool state) {
@@ -22,11 +23,10 @@ public class Session : MonoBehaviour
         StartCoroutine (playExitSound(GetComponent<AudioSource>()));
     }
 
-    public IEnumerator playExitSound(AudioSource source){
+    private IEnumerator playExitSound(AudioSource source){
         source.Play ();
         yield return new WaitWhile (()=> source.isPlaying);
         Application.Quit();
-
     }
 
     public bool getPauseState() {
@@ -34,7 +34,7 @@ public class Session : MonoBehaviour
     }
 
     public void lockCursor() {
-        Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
