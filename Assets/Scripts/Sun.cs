@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
+    [SerializeField]private Gradient gradient;
+    private Light light;
     public float timeMultiplier = 1f;
-    
-    float sunInitialIntensity;
-
     private float lastTime = 0f;
     private float thisTime = 0f;
-    
-    void Update() {
+
+	private void Start() {
+        light = GetComponent<Light>();
+	}
+
+	void Update() {
         lastTime = thisTime;
         transform.Rotate (timeMultiplier * Time.deltaTime, 0, 0);
         thisTime = getTimeOfDay();
+
+        // light colour
+        light.color = gradient.Evaluate(thisTime);
     }
 
     public float getTimeOfDay() {
