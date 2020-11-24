@@ -32,14 +32,14 @@ public class OptionsScreen : MonoBehaviour
 	public void resetOptionToPlayerPrefs() {
 		soundSlider.value = Settings.getSoundSetting();
 		musicSlider.value = Settings.getMusicSetting();
-        blurToggle.isOn = Settings.getBlurSetting() == 1 ? true : false;
-        AAToggle.isOn = Settings.getAASetting() == 1 ? true : false;
+        blurToggle.isOn = Settings.getBlurSetting();
+        AAToggle.isOn = Settings.getAASetting();
     }
 
 	public void saveOptions() {
         Settings.setSoundSetting(soundSlider.value);
         Settings.setMusicSetting(musicSlider.value);
-        Settings.setBlurSetting(blurToggle.isOn ? 1 : 0);
-        Settings.setAASetting(AAToggle.isOn ? 1 : 0);
+        Settings.setBlurSetting(blurToggle.isOn);
+        Settings.setAASetting(AAToggle.isOn);
     }
 }

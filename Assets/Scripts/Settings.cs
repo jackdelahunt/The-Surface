@@ -22,18 +22,18 @@ public static class Settings
 
 		return PlayerPrefs.GetFloat(musicKey);
 	}
-	public static int getBlurSetting() {
+	public static bool getBlurSetting() {
 		if (!PlayerPrefs.HasKey(blurKey))
 			PlayerPrefs.SetInt(blurKey, 1);
 
-		return PlayerPrefs.GetInt(blurKey);
+		return PlayerPrefs.GetInt(blurKey) == 1; 
 	}
 
-	public static int getAASetting() {
+	public static bool getAASetting() {
 		if (!PlayerPrefs.HasKey(AAKey))
 			PlayerPrefs.SetInt(AAKey, 1);
 
-		return PlayerPrefs.GetInt(AAKey);
+		return PlayerPrefs.GetInt(AAKey) == 1;
 	}
 
 	// ******************************************
@@ -50,24 +50,18 @@ public static class Settings
 		PlayerPrefs.SetFloat(musicKey, value);
 	}
 
-	public static void setBlurSetting(int value) {
-
-		if (value < 0 || value > 1)
-			return;
+	public static void setBlurSetting(bool value) {
 
 		// make sure it exists, not a great way 
 		getBlurSetting();
-		PlayerPrefs.SetInt(blurKey, value);
+		PlayerPrefs.SetInt(blurKey, value ? 1 : 0);
 	}
 
-	public static void setAASetting(int value) {
-
-		if (value < 0 || value > 1)
-			return;
+	public static void setAASetting(bool value) {
 
 		// make sure it exists, not a great way 
 		getAASetting();
-		PlayerPrefs.SetInt(AAKey, value);
+		PlayerPrefs.SetInt(AAKey, value ? 1 : 0);
 	}
 
 }
