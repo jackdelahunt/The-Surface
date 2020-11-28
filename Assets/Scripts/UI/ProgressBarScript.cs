@@ -20,7 +20,7 @@ public class ProgressBarScript : MonoBehaviour
 	public void updateProgressBar() {
 		progressBar.sizeDelta = new Vector2(ResourceManager.getAmount("Manpower") * multiplier, progressBar.sizeDelta.y);
 
-		if(ResourceManager.getAmount("Manpower") >= requiredManpower) {
+		if(ResourceManager.getAmount("Manpower") >= requiredManpower && ResourceManager.getAmount("Ship Upgrade") >= 5) {
 			session.unlockCursor();
 			session.loadScene(3);
 		}
