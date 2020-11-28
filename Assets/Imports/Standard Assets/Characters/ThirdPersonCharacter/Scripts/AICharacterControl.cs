@@ -10,7 +10,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     {
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
-        public Transform target;                                    // target to aim for
+        public Transform target;
+        private Rigidbody myRigidBody;
 
 
         private void Start()
@@ -18,7 +19,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // get the components on the object we need ( should not be null due to require component so no need to check )
             agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
             character = GetComponent<ThirdPersonCharacter>();
-
+            myRigidBody = GetComponent<Rigidbody>();
 	        agent.updateRotation = false;
 	        agent.updatePosition = true;
             target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -44,6 +45,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
 
         public void kill() {
+
+            // don't kill while falling
+            if (myRigidBody.velocity.y < -5)
+                return;
+
             toggleRagdoll();
             GetComponent<Animator>().enabled = false;
 
