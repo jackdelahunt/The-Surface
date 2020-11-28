@@ -13,10 +13,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        public float health = 100;
-        public float maxHealth = 100;
-        public float healthRegenAmount = 10;
+        public float defaultMaxHealth = 100;
+        public float maxHealth;
         
+		public float defaultRegenAmount = 10;
+		public float healthRegenAmount;
+
+		public float defaultRegenTime = 10f;
+		public float regenTime;
+
+		public float defaultBotDamage = 10f;
+		public float botDamage;
+
+		public float health = 100;
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -81,9 +91,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
             setSoundSettings();
+            setFiledsBasedOnDifficulty();
 
-            InvokeRepeating("regenerateHealth", 0f, 10f);
+            InvokeRepeating("regenerateHealth", 0f, regenTime);
         }
+
+        private void setFiledsBasedOnDifficulty() {
+            float maxHealthOffset = 10f;
+            maxHealth = defaultMaxHealth + (-1 * maxHealthOffset * (int)(Settings.getDifficultySetting() - 1));
+
+            float regenAmountOffset = 2f;
+            healthRegenAmount = defaultRegenAmount + (-1 * regenAmountOffset * (int)(Settings.getDifficultySetting() - 1));
+
+			float regenTimeOffset = 1f;
+			regenTime = defaultRegenTime+ (-1 * regenTimeOffset * (int)(Settings.getDifficultySetting() - 1));
+
+			float botDamageOffset = 3f;
+			botDamage = defaultBotDamage + (botDamageOffset * (int)(Settings.getDifficultySetting() - 1));
+		}
 
         private void setSoundSettings() {
             //should not be done in the player
@@ -133,7 +158,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void OnTriggerEnter(Collider other) { 
 			if(other.gameObject.CompareTag("Bot")) {
-                health -= 5;
+                health -= botDamage;
             }
 		}
 
