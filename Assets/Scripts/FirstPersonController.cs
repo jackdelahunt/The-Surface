@@ -25,7 +25,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		public float defaultBotDamage = 10f;
 		public float botDamage;
 
-		public float health = 100;
+		public float health;
 
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -108,6 +108,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			float botDamageOffset = 3f;
 			botDamage = defaultBotDamage + (botDamageOffset * (int)(Settings.getDifficultySetting() - 1));
+
+            health = maxHealth;
 		}
 
         private void setSoundSettings() {

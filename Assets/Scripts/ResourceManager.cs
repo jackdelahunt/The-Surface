@@ -10,7 +10,7 @@ public static class ResourceManager
         {"Oxygen", 5},
         {"Power", 0},
         {"Water", 5},
-        {"Manpower", 10},
+        {"Manpower", 30},
         {"Ship Upgrade", 0},
         {"Mine", 0},
         {"Solar Panel", 1},
