@@ -3833,21 +3833,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Your comrades have crash landed on the moon and the ESA have told you
     that there is no hope. \n\nYou disarmed a gaurd and took over mission control
-    by force and now you are the only left to save the colonist on the moon. They
-    have limited resources but with your guidance they can build a self sustaining
-    colony and thrive on the Lunar surface.\n\nIt will take 500 manpower for you
-    to deam the colony as self sustaining. To get to this follow the crafting guide
-    below. And make sure the colony has surplus resources when you leave or the colony
-    will collapse when you stop. Your progress is displayed on the top of the HUD.\n\nEvery
-    morning the gaurds will break in andwill try to take over mission control from
-    you. Make sure to fend them off for as long as you can, if you die the coloniest
-    are lost. Your health is shown at the bottom of the HUD.\n\nCrafting Guide:\nIron
-    is crafted fom mines and comsumes power\n\nOxygen is crafted from the level of
-    the ship and comsumes power\n\nPower is generated from solar panels\n\nmanpower
-    is crafted by the player and requires 5 water and 5\n\nmines are crafted from
-    20 iron and 5 manpower\n\nupgrade the ship with 20 iron and 10 manpower\n\nsolar
-    panels are crafted from 10 iron and 5 manpower\n\nwater is crafted from 3 oxygen
-    and comsumes power\n\n\n\n\n "
+    by force and now you are the only one left to save the colonist on the moon.
+    They have limited resources but with your guidance they can build a self sustaining
+    colony and thrive on the Lunar surface.\n\nIt will take 100  manpower and a level
+    5 ship for you to deam the colony as self sustaining. Your progress is displayed
+    on the top of the HUD with a green bar, and the your ship level will also be
+    displayed.\n\nEvery morning the gaurds will break in and will try to take over
+    mission control from you. Make sure to fend them off for as long as you can,
+    if you die the coloniest are lost. Your health is shown at the bottom of the
+    HUD.\n\n\n\n "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
