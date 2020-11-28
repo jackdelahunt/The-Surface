@@ -5,9 +5,6 @@ using System.Collections;
 public class Session : MonoBehaviour
 {
 
-	public void Update() {
-        print(Settings.getDifficultySetting());
-	}
 	public void loadNext() {
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index + 1, LoadSceneMode.Single);
@@ -19,7 +16,6 @@ public class Session : MonoBehaviour
 
     public void loadLast() {
         int index = SceneManager.GetActiveScene().buildIndex;
-        print("Loading last: " + index);
         SceneManager.LoadScene(index - 1, LoadSceneMode.Single);
     }
 
