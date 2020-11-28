@@ -15,7 +15,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         public float health = 100;
         public float maxHealth = 100;
-        public float healthRegenAmount = 5;
+        public float healthRegenAmount = 10;
         
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -34,6 +34,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on gr
+        [SerializeField] private Session session;
+
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -67,6 +69,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+            session = GameObject.FindGameObjectWithTag("Session").GetComponent<Session>();
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -79,7 +82,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
             setSoundSettings();
 
-            InvokeRepeating("regenerateHealth", 0f, 1f);
+            InvokeRepeating("regenerateHealth", 0f, 10f);
         }
 
         private void setSoundSettings() {
@@ -113,7 +116,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
-        }
+
+			if (health <= 0) {
+				session.unlockCursor();
+				session.pauseGame(false);
+				session.loadScene(2);
+			}
+		}
 
         private void regenerateHealth() {
             if (health + healthRegenAmount <= maxHealth)

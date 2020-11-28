@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mission Control.unity
     guid: 118bc778328fc0248ac5a94962a1d576
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: 5c58e57974541ea4fa0c40a3a013739f
   m_configObjects: {}

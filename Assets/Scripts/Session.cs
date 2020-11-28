@@ -9,6 +9,10 @@ public class Session : MonoBehaviour
         SceneManager.LoadScene(index + 1, LoadSceneMode.Single);
     }
 
+    public void loadScene(int index) {
+        SceneManager.LoadScene(index, LoadSceneMode.Single);
+	}
+
     public void loadLast() {
         int index = SceneManager.GetActiveScene().buildIndex;
         print("Loading last: " + index);
@@ -30,7 +34,7 @@ public class Session : MonoBehaviour
     }
 
     public bool getPauseState() {
-        return Time.timeScale == 0 ? true : false;
+        return Time.timeScale == 0;
     }
 
     public void lockCursor() {
