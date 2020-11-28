@@ -55,14 +55,7 @@ public static class ResourceManager
         }
     }
 
-    public static void runRecipe(int amount, Recpie recpie, bool validate = false) {
-        if(validate){
-            Debug.Log(recpie.recipeName + " : validated");
-        }
-        if(recpie == null) {
-            Debug.Log("Null Recipe");
-            return;
-        }
+    public static void runRecipe(int amount, Recpie recpie) {
         for(int i = 0; i < amount; i++) {
             
             // check for all ingredients first
@@ -78,9 +71,6 @@ public static class ResourceManager
             }
 
             addToInventory(recpie.recipeName, recpie.yeld);
-
-            if(validate)
-                Debug.Log("Successful craft of " + recpie.recipeName);
 
         }
     }

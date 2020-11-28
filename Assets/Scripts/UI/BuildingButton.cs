@@ -11,6 +11,6 @@ public class BuildingButton : MonoBehaviour
     public void click() {
         string text = buttonText.text;
         Recpie recpie = recipeManager.getRecpie(text);
-        ResourceManager.runRecipe(1, recipeManager.getRecpie(buttonText.text), validate:true);
+        ResourceManager.runRecipe(1, recipeManager.getRecpie(buttonText.text));
     }
 }

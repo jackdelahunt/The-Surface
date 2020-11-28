@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public Sun sun;
     public Transform botParent;
 
-    public int defaultSpawnCount = 4;
+    public int defaultSpawnCount = 6;
     public int spawnCount;
 
     void Start() {
