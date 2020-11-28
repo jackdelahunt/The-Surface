@@ -4,6 +4,10 @@ using System.Collections;
 
 public class Session : MonoBehaviour
 {
+
+	public void Update() {
+        print(Settings.getDifficultySetting());
+	}
 	public void loadNext() {
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index + 1, LoadSceneMode.Single);

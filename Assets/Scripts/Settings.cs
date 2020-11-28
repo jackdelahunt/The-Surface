@@ -8,6 +8,7 @@ public static class Settings
 	public static readonly string musicKey = "music";
 	public static readonly string blurKey = "blur";
 	public static readonly string AAKey = "antiAliasing";
+	public static readonly string difficultyKey = "difficulty";
 
 	public static float getSoundSetting() {
 		if (!PlayerPrefs.HasKey(soundKey))
@@ -36,6 +37,13 @@ public static class Settings
 		return PlayerPrefs.GetInt(AAKey) == 1;
 	}
 
+	public static Difficulty getDifficultySetting() {
+		if (!PlayerPrefs.HasKey(difficultyKey))
+			PlayerPrefs.SetInt(difficultyKey, (int)Difficulty.EASY);
+
+		return (Difficulty)PlayerPrefs.GetInt(difficultyKey);
+	}
+
 	// ******************************************
 
 	public static void setSoundSetting(float value) {
@@ -62,6 +70,10 @@ public static class Settings
 		// make sure it exists, not a great way 
 		getAASetting();
 		PlayerPrefs.SetInt(AAKey, value ? 1 : 0);
+	}
+
+	public static void setDifficultySetting(Difficulty level) {
+		PlayerPrefs.SetInt(difficultyKey, (int)level);
 	}
 
 }

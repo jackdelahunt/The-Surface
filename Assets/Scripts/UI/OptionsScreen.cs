@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OptionsScreen : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class OptionsScreen : MonoBehaviour
     [SerializeField] private Toggle AAToggle;
     [SerializeField] private Toggle blurToggle;
     [SerializeField]private Animator animator;
+    [SerializeField] private DifficultyButton difficultyButton;
 
 
     void Start()
@@ -34,6 +36,7 @@ public class OptionsScreen : MonoBehaviour
 		musicSlider.value = Settings.getMusicSetting();
         blurToggle.isOn = Settings.getBlurSetting();
         AAToggle.isOn = Settings.getAASetting();
+        difficultyButton.index = (int)Settings.getDifficultySetting();
     }
 
 	public void saveOptions() {
@@ -41,5 +44,12 @@ public class OptionsScreen : MonoBehaviour
         Settings.setMusicSetting(musicSlider.value);
         Settings.setBlurSetting(blurToggle.isOn);
         Settings.setAASetting(AAToggle.isOn);
+        Settings.setDifficultySetting((Difficulty)difficultyButton.index);
     }
+}
+
+public enum Difficulty {
+    EASY,
+    MEDUIM,
+    HARD
 }
