@@ -13,6 +13,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        public float health = 100;
+        public float maxHealth = 100;
+        public float healthRegenAmount = 5;
+        
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -74,6 +78,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
             setSoundSettings();
+
+            InvokeRepeating("regenerateHealth", 0f, 1f);
         }
 
         private void setSoundSettings() {
@@ -108,6 +114,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
+
+        private void regenerateHealth() {
+            if (health + healthRegenAmount <= maxHealth)
+                health += healthRegenAmount;
+            else
+                health = maxHealth;
+		}
+
+		private void OnTriggerEnter(Collider other) { 
+			if(other.gameObject.CompareTag("Bot")) {
+                health -= 5;
+            }
+		}
 
         private void handleGun() {
             if(Input.GetButtonDown("Fire1") && Time.time > nextFire) {
