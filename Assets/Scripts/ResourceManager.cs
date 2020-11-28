@@ -12,8 +12,8 @@ public static class ResourceManager
         {"Water", 5},
         {"Manpower", 30},
         {"Ship Upgrade", 0},
-        {"Mine", 0},
-        {"Solar Panel", 1},
+        {"Mine", 1},
+        {"Solar Panel", 3},
     };
 
     public static bool addToInventory(string type, float amount) {
