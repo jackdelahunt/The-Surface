@@ -31,11 +31,11 @@ public class Siren : MonoBehaviour
                 lightsSpinning = true;
             }
         } else {
-            if(siren.isPlaying) {
-                siren.Stop();
-                lightsSpinning = false;
-            }
-        }
+
+			siren.Stop();
+			lightsSpinning = false;
+
+		}
     }
 
     private void spinThoseLightsMyBrotha() {

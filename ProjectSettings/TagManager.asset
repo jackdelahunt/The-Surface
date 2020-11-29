@@ -11,6 +11,8 @@ TagManager:
   - Undefined
   - TerminalUI
   - BotManager
+  - ScreenSpaceUI
+  - Spawner
   layers:
   - Default
   - TransparentFX
