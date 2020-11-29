@@ -398,6 +398,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaxHealth: 100
+  maxHealth: 0
+  defaultRegenAmount: 10
+  healthRegenAmount: 0
+  defaultRegenTime: 10
+  regenTime: 0
+  defaultBotDamage: 10
+  botDamage: 0
   health: 100
   m_IsWalking: 1
   m_WalkSpeed: 10
@@ -511,6 +519,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  session: {fileID: 0}
   m_Jumping: 0
   masterMixer: {fileID: 24100000, guid: 0e5ed586d5455964db13ddefe1e077fa, type: 2}
   gunDamage: 1
