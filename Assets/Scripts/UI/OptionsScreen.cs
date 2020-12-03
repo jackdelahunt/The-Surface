@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class OptionsScreen : MonoBehaviour
-{
+public class OptionsScreen : MonoBehaviour {
     [SerializeField] private Slider soundSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Toggle AAToggle;
     [SerializeField] private Toggle blurToggle;
+    [SerializeField] private Toggle fpsToggle;
     [SerializeField]private Animator animator;
     [SerializeField] private DifficultyButton difficultyButton;
 
@@ -37,6 +37,7 @@ public class OptionsScreen : MonoBehaviour
         blurToggle.isOn = Settings.getBlurSetting();
         AAToggle.isOn = Settings.getAASetting();
         difficultyButton.index = (int)Settings.getDifficultySetting();
+        fpsToggle.isOn = Settings.getFPSSetting();
     }
 
 	public void saveOptions() {
@@ -45,6 +46,7 @@ public class OptionsScreen : MonoBehaviour
         Settings.setBlurSetting(blurToggle.isOn);
         Settings.setAASetting(AAToggle.isOn);
         Settings.setDifficultySetting((Difficulty)difficultyButton.index);
+        Settings.setFPSSetting(fpsToggle.isOn);
     }
 }
 

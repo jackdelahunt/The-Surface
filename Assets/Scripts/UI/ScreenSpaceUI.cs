@@ -12,15 +12,21 @@ public class ScreenSpaceUI : MonoBehaviour
     [SerializeField] private TMP_Text currentWave;
     [SerializeField] private TMP_Text fpsCounter;
 
+    private bool showFPS = false;
+
     void Start() {
+        showFPS = Settings.getFPSSetting();
         session = GameObject.FindGameObjectWithTag("Session").GetComponent<Session>();
         spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         updateWave();
+
+        fpsCounter.enabled = showFPS;
     }
     void Update() {
         pauseMenu.SetActive( session.getPauseState() );
         currentLevelText.SetText( ResourceManager.getAmount("Ship Upgrade").ToString());
-        fpsCounter.SetText( Mathf.RoundToInt(1 / Time.deltaTime).ToString() );
+        if(fpsCounter.enabled)
+            fpsCounter.SetText( Mathf.RoundToInt(1 / Time.deltaTime).ToString() );
     }
 
     public void updateWave() {

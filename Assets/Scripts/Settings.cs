@@ -9,6 +9,7 @@ public static class Settings
 	public static readonly string blurKey = "blur";
 	public static readonly string AAKey = "antiAliasing";
 	public static readonly string difficultyKey = "difficulty";
+	public static readonly string fpsKey = "fps";
 
 	public static float getSoundSetting() {
 		if (!PlayerPrefs.HasKey(soundKey))
@@ -44,6 +45,13 @@ public static class Settings
 		return (Difficulty)PlayerPrefs.GetInt(difficultyKey);
 	}
 
+	public static bool getFPSSetting() {
+		if (!PlayerPrefs.HasKey(fpsKey))
+			PlayerPrefs.SetInt(fpsKey, 1);
+
+		return PlayerPrefs.GetInt(fpsKey) == 1;
+	}
+
 	// ******************************************
 
 	public static void setSoundSetting(float value) {
@@ -74,6 +82,13 @@ public static class Settings
 
 	public static void setDifficultySetting(Difficulty level) {
 		PlayerPrefs.SetInt(difficultyKey, (int)level);
+	}
+
+	public static void setFPSSetting(bool value) {
+
+		// make sure it exists, not a great way 
+		getFPSSetting();
+		PlayerPrefs.SetInt(fpsKey, value ? 1 : 0);
 	}
 
 }
