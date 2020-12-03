@@ -10,6 +10,7 @@ public class ScreenSpaceUI : MonoBehaviour
     [SerializeField]private GameObject pauseMenu;
     [SerializeField] private TMP_Text currentLevelText;
     [SerializeField] private TMP_Text currentWave;
+    [SerializeField] private TMP_Text fpsCounter;
 
     void Start() {
         session = GameObject.FindGameObjectWithTag("Session").GetComponent<Session>();
@@ -19,6 +20,7 @@ public class ScreenSpaceUI : MonoBehaviour
     void Update() {
         pauseMenu.SetActive( session.getPauseState() );
         currentLevelText.SetText( ResourceManager.getAmount("Ship Upgrade").ToString());
+        fpsCounter.SetText( Mathf.RoundToInt(1 / Time.deltaTime).ToString() );
     }
 
     public void updateWave() {
