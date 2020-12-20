@@ -16,5 +16,5 @@ MonoBehaviour:
   ingredients:
   - Power
   amounts:
-  - 0.1
+  - 1
   yeld: 0.5

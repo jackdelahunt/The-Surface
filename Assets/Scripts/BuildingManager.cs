@@ -25,6 +25,7 @@ public class BuildingManager : MonoBehaviour
         // runRecipe(1, "Manpower");
 
         resourceScreen.tick();
+        print(ResourceManager.getAmount("Oxygen"));
     }
 
     public void runRecipe(int amount, string name) {
