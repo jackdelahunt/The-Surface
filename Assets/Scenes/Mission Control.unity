@@ -6481,6 +6481,10 @@ PrefabInstance:
       propertyPath: recipeManager
       value: 
       objectReference: {fileID: 781468216}
+    - target: {fileID: 189347736, guid: a3121d5f19ac1894da92414271b70483, type: 3}
+      propertyPath: m_Text
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 831308768, guid: a3121d5f19ac1894da92414271b70483, type: 3}
       propertyPath: currentLevelText
       value: 
@@ -6720,6 +6724,11 @@ PrefabInstance:
     - target: {fileID: 8615019303910679100, guid: a3121d5f19ac1894da92414271b70483,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615019305454650450, guid: a3121d5f19ac1894da92414271b70483,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
